@@ -4,11 +4,20 @@ import org.apache.sling.api.resource.Resource;
 
 
 import org.apache.sling.api.SlingHttpServletRequest;
+import org.apache.sling.models.annotations.Exporter;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
-@Model(adaptables = {Resource.class, SlingHttpServletRequest.class})
+import com.adobe.cq.export.json.ExporterConstants;
+
+@Model(adaptables = {Resource.class, SlingHttpServletRequest.class},
+resourceType = {HeroBannerModel.RESOURCE_TYPE }
+)
+@Exporter(name=ExporterConstants.SLING_MODEL_EXPORTER_NAME, extensions = ExporterConstants.SLING_MODEL_EXTENSION)
 public class HeroBannerModel {
+
+    public static final String RESOURCE_TYPE = "mysite/components/herobanner";
+
     @ValueMapValue
     private String title;
 
