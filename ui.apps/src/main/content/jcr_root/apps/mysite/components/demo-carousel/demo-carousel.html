@@ -1,0 +1,26 @@
+<div class="cmp-demo-carousel" data-sly-use.model="com.mysite.core.models.DemoCarouselModel">
+    <div class="cmp-demo-carousel__slides">
+        <!-- Repeat the whole slide element per item so slides are siblings -->
+        <div class="cmp-demo-carousel__slide" data-sly-repeat.slide="${model.slides}">
+            <img class="cmp-demo-carousel__image" src="${slide.image @ context='uri'}" alt="${slide.title}"/>
+            <div class="cmp-demo-carousel__content">
+                <div class="cmp-demo-carousel__text-content">
+                    <h2 class="cmp-demo-carousel__title">${slide.title}</h2>
+                    <h3 class="cmp-demo-carousel__subtitle">${slide.subtitle}</h3>
+                    <p class="cmp-demo-carousel__description">${slide.description}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Navigation buttons with Google Material Icons -->
+    <div class="cmp-demo-carousel__nav-container">
+        <button class="cmp-demo-carousel__nav cmp-demo-carousel__nav--prev" type="button" aria-label="Previous slide">
+            <span class="material-icons">chevron_left</span>
+        </button>
+        <button class="cmp-demo-carousel__nav cmp-demo-carousel__nav--next" type="button" aria-label="Next slide">
+            <span class="material-icons">chevron_right</span>
+        </button>
+    </div>
+    
+</div>
