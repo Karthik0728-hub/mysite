@@ -1,0 +1,35 @@
+.hero {
+    position: relative;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    &__bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+    }
+  
+    &__content {
+      text-align: center;
+      z-index: 1;
+  
+      // Default text styling
+      color: white;
+  
+      // Theme-based text styles
+      &.light {
+        color: #333; // darker text for light overlay or light image
+      }
+  
+      &.dark {
+        color: white; // lighter text for dark image or dark overlay
+      }
+    }
+  }
+  

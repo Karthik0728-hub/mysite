@@ -1,0 +1,11 @@
+<div data-sly-use.heroBannerModel="com.mysite.core.models.HeroBannerModel"
+     class="hero ${heroBannerModel.theme}">
+  
+  <div class="hero__bg" style="background-image: url('${heroBannerModel.backgroundImage @ context='uri'}')"></div>
+  
+  <div class="hero__content">
+    <h1>${heroBannerModel.title}</h1>
+    <p>${heroBannerModel.description}</p>
+
+  </div>
+</div>
