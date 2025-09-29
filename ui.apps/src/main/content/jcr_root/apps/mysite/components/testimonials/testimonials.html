@@ -1,0 +1,13 @@
+<div class="testimonials-carousel" data-sly-use.model="com.mysite.core.models.TestimonialsCarouselModel">
+    <h2>${model.title}</h2>
+    <div class="carousel-items">
+        <sly data-sly-list.testimonial="${model.testimonials}">
+            <div class="testimonial-item">
+                <img src="${testimonial.profileImage}" alt="${testimonial.name}" />
+                <blockquote>${testimonial.quote}</blockquote>
+                <p class="name">${testimonial.name}</p>
+                <p class="role">${testimonial.role}</p>
+            </div>
+        </sly>
+    </div>
+</div>
