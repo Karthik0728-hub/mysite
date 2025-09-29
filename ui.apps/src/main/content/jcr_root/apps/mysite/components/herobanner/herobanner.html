@@ -1,11 +1,21 @@
 <div data-sly-use.heroBannerModel="com.mysite.core.models.HeroBannerModel"
      class="hero ${heroBannerModel.theme}">
-  
+
+  <!-- Background Image -->
   <div class="hero__bg" style="background-image: url('${heroBannerModel.backgroundImage @ context='uri'}')"></div>
-  
-  <div class="hero__content">
+
+  <div class="hero__content ${heroBannerModel.theme}">
     <h1>${heroBannerModel.title}</h1>
     <p>${heroBannerModel.description}</p>
 
+    <div class="hero__content__buttons">
+      <sly data-sly-list.button="${heroBannerModel.heroButtons}">
+        <a href="${button.ctaUrl @ context='uri'}"
+           target="${button.ctaTarget}"
+           class="${button.buttonType} ${heroBannerModel.theme}">
+           ${button.ctaLabel}
+        </a>
+      </sly>
+    </div>
   </div>
 </div>

@@ -1,35 +1,96 @@
 .hero {
-    position: relative;
-    height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  
-    &__bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
+  position: relative;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__bg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__content {
+    text-align: center;
+    z-index: 1;
+
+    h1, p {
+      margin: 0;
     }
-  
-    &__content {
-      text-align: center;
-      z-index: 1;
-  
-      // Default text styling
-      color: white;
-  
-      // Theme-based text styles
-      &.light {
-        color: #333; // darker text for light overlay or light image
+
+    &.light {
+      h1, p {
+        color: #000;
       }
-  
-      &.dark {
-        color: white; // lighter text for dark image or dark overlay
+    }
+
+    &.dark {
+      h1, p {
+        color: #fff;
+      }
+    }
+
+    &__buttons {
+      margin-top: 20px;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      a {
+        padding: 10px 25px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+
+        &.primary {
+          background-color: #0078d4;
+          border: none;
+          color: white;
+
+          &.light {
+            background-color: #e0f0ff;
+            color: #0078d4;
+          }
+
+          &.dark {
+            background-color: #0078d4;
+            color: #fff;
+          }
+
+          &:hover {
+            background-color: darken(#0078d4, 10%);
+          }
+        }
+
+        &.secondary {
+          background-color: transparent;
+          border: 2px solid white;
+          color: white;
+
+          &.light {
+            border-color: #333;
+            color: #333;
+
+            &:hover {
+              background-color: rgba(0,0,0,0.05);
+            }
+          }
+
+          &.dark {
+            border-color: #fff;
+            color: #fff;
+
+            &:hover {
+              background-color: rgba(255,255,255,0.1);
+            }
+          }
+        }
       }
     }
   }
-  
+}
