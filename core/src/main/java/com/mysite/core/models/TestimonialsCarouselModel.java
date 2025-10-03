@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
-import com.adobe.cq.dam.cfm.ContentReferenceElement;
+
 
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
