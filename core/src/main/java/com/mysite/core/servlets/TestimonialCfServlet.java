@@ -34,7 +34,9 @@ public class TestimonialCfServlet extends SlingSafeMethodsServlet {
         if (cfPath == null || cfPath.isEmpty()) {
             cfPath = "/content/dam/mysite/testimonials";
         }
-        
+
+        String filterRole = request.getParameter("role");
+
         ResourceResolver resolver = request.getResourceResolver();
         Resource root = resolver.getResource(cfPath);
 
@@ -49,7 +51,9 @@ public class TestimonialCfServlet extends SlingSafeMethodsServlet {
                     String quote = cf.getElement("quote") != null ? cf.getElement("quote").getContent() : "";
                     String profileImage = cf.getElement("profileImage") != null ? cf.getElement("profileImage").getContent() : "";
         
-                    testimonials.add(new Testimonial(name, role, quote, profileImage));
+                   if (filterRole == null || filterRole.isEmpty() || role.equalsIgnoreCase(filterRole)) {
+                        testimonials.add(new Testimonial(name, role, quote, profileImage));
+                    }
                 }
             }
         }
